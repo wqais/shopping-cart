@@ -1,0 +1,82 @@
+body{
+    background: url('/assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.cookie-conatiner{
+    width: 70%;
+    padding-right: 2rem;
+}
+
+.btn-primary{
+    background-color: rgb(255, 150, 74);
+    border-color: rgb(255, 150, 74);
+}
+
+.cart{
+    height: 70vh;   
+    margin-left: 2rem;
+    padding-left: 1rem;
+    scroll-behavior: smooth;
+    scrollbar-width: 1rem;
+}
+
+h2{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+.cookie-heading{
+    margin-left: 3rem;
+}
+
+.cookies-list{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+    list-style-type: none;
+}
+
+.card{
+    margin-left: 1rem;
+}
+
+.add-to-cart-btn{
+    margin-left: 1rem;
+}
+
+.cart-hr{
+    width: 30rem;
+    border: 5px solid rgb(115, 165, 250);
+}
+
+.cart-total{
+    margin-left: 2rem;
+}
+
+.cart-item{
+    margin-bottom: 1rem;
+}
+
+.remove-btn{
+    height: 2.2rem;
+    display: inline-block;
+}
+
+.thanks-text{
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.empty-btn{
+    margin-left: 2rem;
+}

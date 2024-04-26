@@ -1,0 +1,74 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping List</title>
+</head>
+<body>
+  <div class="list-container">
+    <div class="cookie-container mt-5">
+      <h2 class="cookie-heading mt-3">Add Your Favourite Cookies!</h2>
+      <ul class="cookies-list">
+        <li *ngFor="let cookie of cookies">
+          <div class="card" style="width: 18rem">
+            <img
+              src="{{ cookie.src }}"
+              class="card-img-top"
+              alt="{{ cookie.src }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ cookie.name }}</h5>
+              <p class="card-text">{{ cookie.description }}</p>
+              <p class="card-text">
+                <b>Rs. {{ cookie.price }} per kg.</b>
+              </p>
+              <button
+                class="btn btn-outline-secondary decrement-btn"
+                (click)="operation('-', cookie)"
+              >
+                -
+              </button>
+              <span class="qty" id="qty"> {{ cookie.qty }} </span>
+              <button
+                class="increment-btn btn btn-outline-secondary"
+                (click)="operation('+', cookie)"
+              >
+                +
+              </button>
+              <a
+                href="#"
+                class="btn btn-primary add-to-cart-btn"
+                (click)="toCart(cookie)"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="cart">
+      <h2 class="cart-heading">Your Cart</h2>
+      <hr class="cart-hr" />
+      <ul class="items-list">
+        <li *ngFor="let item of cart" class="cart-item">
+          <b>{{ item.name }}</b> - Qty:
+          <b>{{ item.qty + " " + item.unit }}</b>
+          <p>{{ item.description }}</p>
+          <h6>Item Total: {{ item.qty * item.price }}</h6>
+          <button
+            type="button"
+            class="btn btn-outline-danger remove-btn"
+            (click)="removeFromCart(item)"
+          >
+            Remove
+          </button>
+          <br />
+        </li>
+      </ul>
+      <h4 class="cart-total">Total: Rs. {{ total }}</h4>
+      <button class="btn btn-danger mt-3 empty-btn" (click)="emptyCart()">
+        <strong>Empty Cart</strong>
+      </button>
+    </div>
+  </div>
+  <h3 class="thanks-text">Thank you for Shopping!</h3>
+</body>
